@@ -1,0 +1,42 @@
+{
+  "name": "fasftify-starter",
+  "description": "",
+  "main": "server.js",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "author": "Mahmoud Bebars - @mahmopud-bebars",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahmoud-bebars/fasftify-socket-starter"
+  },
+  "scripts": {
+    "start": "node server.js | pino-pretty",
+    "dev": "nodemon server.js | pino-pretty",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:down": "npx sequelize-cli db:migrate:undo:all",
+    "seed:up": "npx sequelize-cli db:seed:all",
+    "seed:down": "npx sequelize-cli db:seed:undo:all",
+    "db:roll": "npm run migrate:up && npm run seed:up",
+    "db:rebuild": "npm run migrate:down && npm run migrate:up && npm run seed:up"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^5.8.0",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/jwt": "^7.2.2",
+    "@fastify/redis": "^6.1.1",
+    "@fastify/static": "^6.11.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.24.3",
+    "moment": "^2.29.4",
+    "mysql2": "^3.6.2",
+    "sequelize": "^6.33.0",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "sequelize-cli": "^6.6.1"
+  }
+}
